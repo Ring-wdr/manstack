@@ -61,4 +61,4 @@ This project is a monorepo managed by npm workspaces:
 
 ## License
 
-ISC
+MIT

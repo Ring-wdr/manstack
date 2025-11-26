@@ -7,7 +7,35 @@
   - Create an Organization named `manstack` on npmjs.com.
   - OR rename the package to use your username (e.g., `@your-username/core`).
 
-## Steps to Publish
+## Simplified Publishing (Recommended)
+
+We have configured scripts to make publishing easy.
+
+### 1. Version Bump (Optional)
+If you need to update the version of all packages:
+```bash
+npm run version:patch # 1.0.0 -> 1.0.1
+# or
+npm run version:minor # 1.0.0 -> 1.1.0
+```
+*This will automatically update `package.json` in all packages and create a git commit/tag.*
+
+### 2. Publish All
+To build and publish all packages (`core` and `react`) at once:
+```bash
+npm run release
+```
+
+### 3. Publish Individually
+If you only want to publish a specific package:
+```bash
+npm run release:core
+# or
+npm run release:react
+```
+
+## Manual Publishing
+If you prefer to do it manually:
 
 1. **Prepare the Release**
    - Ensure all changes are committed.
@@ -18,7 +46,6 @@
 
 2. **Version Bump**
    - Update versions in `packages/core/package.json` and `packages/react/package.json`.
-   - Ensure `@manstack/react` depends on the new version of `@manstack/core`.
 
 3. **Publish to npm**
    - Publish `core` first:

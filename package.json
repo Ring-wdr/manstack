@@ -9,7 +9,13 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces",
-    "lint": "npm run lint --workspaces"
+    "lint": "npm run lint --workspaces",
+    "release": "npm run build && npm publish --workspaces --access public",
+    "release:core": "npm run build --workspace=@manstack/core && npm publish --workspace=@manstack/core --access public",
+    "release:react": "npm run build --workspace=@manstack/react && npm publish --workspace=@manstack/react --access public",
+    "version:patch": "npm version patch --workspaces",
+    "version:minor": "npm version minor --workspaces",
+    "version:major": "npm version major --workspaces"
   },
   "keywords": [],
   "author": "",
