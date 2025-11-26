@@ -9,7 +9,10 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces",
-    "lint": "npm run lint --workspaces",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "typecheck": "npm run typecheck --workspaces",
     "release": "npm run build && npm publish --workspaces --access public",
     "release:core": "npm run build --workspace=@manstack/core && npm publish --workspace=@manstack/core --access public",
     "release:react": "npm run build --workspace=@manstack/react && npm publish --workspace=@manstack/react --access public",
@@ -21,6 +24,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "2.3.7",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "react": "^19.0.0",
